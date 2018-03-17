@@ -15,7 +15,7 @@ RandomGraph::RandomGraph(int x)
 
 	do
 	{
-		cout << "Enter number of vertices you'd want:";
+		cout << "Enter number of vertices you want: ";
 		cin >> numbOfVertices;
 	} while (numbOfVertices < 2);
 
@@ -26,7 +26,7 @@ RandomGraph::RandomGraph(int x)
 	int minDensity = ceil((minEdges / maxEdges) * 100);
 
 	do {
-		cout << "Enter density (minimal dnesity is :" << minDensity << "%) :";
+		cout << "Enter density (minimal density is: " << minDensity << "%): ";
 		cin >> density;
 	} while (density < minDensity || density >= 100);
 

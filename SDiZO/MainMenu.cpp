@@ -11,14 +11,14 @@ int MainMenu::menuFunction()
 	while (atBeginning)
 	{
 		int choice;
-		cout << "====Graph Algorithms==== \n 1. Random Generate \n 2. Build from File \n 0. Quit \n";
+		cout << "Graph Algorithms\n1. Randomly Generate \n2. Build from File \n0. Quit \n";
 		cin >> choice;
 		system("cls");
 		switch (choice)
 		{
 		case 1://Randomly generated
 		{
-			cout << "===Random Generation===\n";
+			cout << "Random Generation\n";
 			RandomGraph generator(5);
 			Algorithms graph;
 			graph.buildDirGraph();
@@ -31,17 +31,17 @@ int MainMenu::menuFunction()
 			atBeginning = false;
 			while (atBeginning == false)
 			{
-				cout << "\n====Randomly generated graph==== \n1.List \n2.Matrix \n3.Prim \n4.Dijkstra \n";
+				cout << "\nRandomly generated graph \n1.List \n2.Matrix \n3.Prim \n4.Dijkstra \n0.Main menu\n";
 				cin >> choice;
 
 				switch (choice)
 				{
 				case 1: //List
 				{
-					cout << "====Directed List====\n";
+					cout << "Directed List\n";
 					graph.dispDirList();
 					cout << "\n";
-					cout << "====UnDirected List====\n";
+					cout << "Undirected List\n";
 					graph.dispUnDirList();
 					cout << "\n";
 				}
@@ -49,10 +49,10 @@ int MainMenu::menuFunction()
 				case 2: //Matrix
 				{
 
-					cout << "====Directed Matrix====\n";
+					cout << "Directed Matrix\n";
 					graph.dispDirMatrix();
 					cout << "\n";
-					cout << "====UnDirected Matrix====\n";
+					cout << "Undirected Matrix\n";
 					graph.dispUnDirMatrix();
 					cout << "\n";
 
@@ -75,12 +75,12 @@ int MainMenu::menuFunction()
 
 				}
 				break;
-				case 5:
+				case 0:
 				{
 					system("cls");
 					atBeginning = true;
+					break;
 				}
-				break;
 				default:
 				{
 					cout << "Wrong choice! \n";
@@ -92,21 +92,21 @@ int MainMenu::menuFunction()
 		break;
 		case 2://Built from file
 		{
-			cout << "Building Graph from file===";
+			cout << "Building Graph from file\n";
 			Algorithms graph;
 			int c;
 
 			atBeginning = false;
 			while (atBeginning == false)
 			{
-				cout << "====Graph built from file==== \n0.Load \n1.List \n2.Matrix \n3.Prim \n4.Dijkstra \n";
+				cout << "Graph built from file \n1.Load \n2.List \n3.Matrix \n4.Prim \n5.Dijkstra \n0.Main menu\n";
 				cin >> choice;
 
 				switch (choice)
 				{
-				case 0:
+				case 1:
 				{
-					cout << "1. MST \n 2.ST \n";
+					cout << "1.MST \n2.ST \n";
 					cin >> c;
 					switch (c)
 					{
@@ -134,33 +134,33 @@ int MainMenu::menuFunction()
 
 				}break;
 
-				case 1:
+				case 2:
 				{
 					if (c == 1)
 					{
-						cout << "====UnDirected List====\n";
+						cout << "Undirected List\n";
 						graph.dispUnDirList();
 						cout << "\n";
 					}
 					else
 					{
-						cout << "====Directed List====\n";
+						cout << "Directed List\n";
 						graph.dispDirList();
 						cout << "\n";
 					}
 				}
 				break;
-				case 2:
+				case 3:
 				{
 					if (c == 1)
 					{
-						cout << "====UnDirected Matrix====\n";
+						cout << "Undirected Matrix\n";
 						graph.dispUnDirMatrix();
 						cout << "\n";
 					}
 					else
 					{
-						cout << "====Directed Matrix====\n";
+						cout << "Directed Matrix\n";
 						graph.dispDirMatrix();
 						cout << "\n";
 					}
@@ -169,7 +169,7 @@ int MainMenu::menuFunction()
 				}
 				break;
 
-				case 3:
+				case 4:
 				{
 					if (c == 1)
 					{
@@ -181,7 +181,7 @@ int MainMenu::menuFunction()
 					else cout << "\nLoaded data doesn't fit for this algorithm!\n";
 				}
 				break;
-				case 4:
+				case 5:
 				{
 					if (c == 2)
 					{
@@ -193,12 +193,12 @@ int MainMenu::menuFunction()
 					else cout << "\nLoaded data doesn't fit for this algorithm!\n";
 				}
 				break;
-				case 5:
+				case 0:
 				{
 					system("cls");
 					atBeginning = true;
+					break;
 				}
-				break;
 				default:
 				{
 					cout << "Wrong choice! \n";

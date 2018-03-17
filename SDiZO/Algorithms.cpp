@@ -76,7 +76,7 @@ bool Algorithms::buildFromFileMST()
 {
 	bool success = false;
 	string filename;
-	cout << "Enter name of file:";
+	cout << "Enter name of file: ";
 	cin >> filename;
 	filename = filename + ".txt";
 
@@ -87,7 +87,7 @@ bool Algorithms::buildFromFileMST()
 		file >> vertices;
 		directedGraph = new int *[edges];
 		if (file.fail())
-			cout << "blad" << endl;
+			cout << "Error" << endl;
 		else {
 			int source, destination, localWeight;
 			for (int i = 0; i < edges; i++)
@@ -98,7 +98,7 @@ bool Algorithms::buildFromFileMST()
 
 				if (file.fail())
 				{
-					cout << "blad" << endl;
+					cout << "Error" << endl;
 					break;
 				}
 				else
@@ -116,7 +116,7 @@ bool Algorithms::buildFromFileMST()
 	}
 	else
 	{
-		cout << "blad" << endl;
+		cout << "Error" << endl;
 		success = false;
 	}
 	return success;
@@ -125,7 +125,7 @@ bool Algorithms::buildFromFileSP()
 {
 	bool success = false;
 	string filename;
-	cout << "Enter name of file:";
+	cout << "Enter name of file: ";
 	cin >> filename;
 	filename = filename + ".txt";
 
@@ -138,7 +138,7 @@ bool Algorithms::buildFromFileSP()
 		//file >> endVertex;
 		directedGraph = new int *[edges];
 		if (file.fail())
-			cout << "blad" << endl;
+			cout << "Error" << endl;
 		else {
 			int source, destination, localWeight;
 			for (int i = 0; i < edges; i++)
@@ -149,7 +149,7 @@ bool Algorithms::buildFromFileSP()
 
 				if (file.fail())
 				{
-					cout << "blad" << endl;
+					cout << "Error" << endl;
 					break;
 				}
 				else
@@ -167,7 +167,7 @@ bool Algorithms::buildFromFileSP()
 	}
 	else
 	{
-		cout << "blad" << endl;
+		cout << "Error" << endl;
 		success = false;
 	}
 	return success;
@@ -247,7 +247,7 @@ void Algorithms::dispDirMatrix()
 	{
 		for (int j = 0; j < vertices; j++)
 		{
-			cout << directedMatrix[i][j] << " ";
+			cout << directedMatrix[i][j] << "\t";
 		}
 		cout << endl;
 	}
@@ -282,7 +282,7 @@ void Algorithms::dispUnDirMatrix()
 	{
 		for (int j = 0; j < vertices; j++)
 		{
-			cout << undirectedMatrix[i][j] << " ";
+			cout << undirectedMatrix[i][j] << "\t";
 		}
 		cout << endl;
 	}
@@ -312,7 +312,7 @@ void Algorithms::dispDirList()
 {
 	for (int i = 0; i < vertices; i++)
 	{
-		cout << "A[" << i << "] =";
+		cout << "A[" << i << "]\t";
 		tmp = neighboursList[i];
 		while (tmp)
 		{
@@ -358,7 +358,7 @@ void Algorithms::dispUnDirList()
 {
 	for (int i = 0; i < vertices; i++)
 	{
-		cout << "A[" << i << "] =";
+		cout << "A[" << i << "]\t";
 		tmp = undirectedList[i];
 		while (tmp)
 		{
@@ -417,10 +417,10 @@ void Algorithms::PrimL()
 
 	int MST = 0;
 	for (int i = 0; i < vertices - 1; i++) {
-		cout << "(" << listResults[i][0] << "," << listResults[i][1] << ")   " << listResults[i][2] << endl;
+		cout << "(" << listResults[i][0] << "," << listResults[i][1] << ")	" << listResults[i][2] << endl;
 		MST += listResults[i][2];
 	}
-	cout << "MST: " << MST << endl;
+	cout << "MST:	" << MST << endl;
 
 }
 
@@ -472,10 +472,10 @@ void Algorithms::PrimM()
 	int MST = 0;
 	for (int i = 0; i < vertices - 1; i++)
 	{
-		cout << "(" << matrixResults[i][0] << "," << matrixResults[i][1] << ")   " << matrixResults[i][2] << endl;
+		cout << "(" << matrixResults[i][0] << "," << matrixResults[i][1] << ")	" << matrixResults[i][2] << endl;
 		MST += matrixResults[i][2];
 	}
-	cout << "MST: " << MST << endl;
+	cout << "MST:	" << MST << endl;
 };
 
 //==================================Dijkstra===============================================
@@ -519,11 +519,11 @@ void Algorithms::DijkstraL(int beg)
 
 
 	cout << "Start " << begVertex << endl;
-	cout << "End    Dist    Path" << endl;
+	cout << "End	Dist	Path" << endl;
 	for (i = 0; i < vertices; i++) {
 		cout << i << ": ";
 		for (j = i; j > -1; j = path[j]) Stack[stackPointer++] = j;
-		cout << "   | " << cost[i] << " |   ";
+		cout << "	" << cost[i] << "	";
 		while (stackPointer) cout << Stack[--stackPointer] << " ";
 		cout << endl;
 	}
@@ -580,12 +580,12 @@ void Algorithms::DijkstraM(int beg)
 
 	}
 	cout << "Start " << begVertex << endl;
-	cout << "End    Dist    Path" << endl;
+	cout << "End	Dist	Path" << endl;
 	for (i = 0; i < vertices; i++)
 	{
 		cout << i << ": ";
 		for (j = i; j > -1; j = path[j]) Stack[stackPointer++] = j;
-		cout << "   | " << cost[i] << " |   ";
+		cout << "	" << cost[i] << "	";
 		while (stackPointer) cout << Stack[--stackPointer] << " ";
 		cout << endl;
 	}
